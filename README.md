@@ -1,6 +1,6 @@
 ## clarin-ccr-service
 
-clarin-ccr-service is java library used to cache concepts from * [CLARIN Concept Registry](https://www.clarin.eu/ccr) localy. The motivation was to make a function that translates concept URI into name (prefLabel) using [OpenSKOS API](http://openskos.org/api) when processing [CMDI](https://www.clarin.eu/content/component-metadata) records and profiles. Since there are many records and concepts are repeating caching was necessary and the simple mapping functionality has grown into a library. 
+clarin-ccr-service is java library used to cache concepts from [CLARIN Concept Registry](https://www.clarin.eu/ccr) localy. The motivation was to make a function that translates concept URI into name (prefLabel) using [OpenSKOS API](http://openskos.org/api) when processing [CMDI](https://www.clarin.eu/content/component-metadata) records and profiles. Since there are many records and concepts are repeating caching was necessary and the simple mapping functionality has grown into a library. 
 
 ## Prerequisites
 
