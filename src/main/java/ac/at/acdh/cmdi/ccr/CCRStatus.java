@@ -1,7 +1,7 @@
 package ac.at.acdh.cmdi.ccr;
 
 public enum CCRStatus {
-	 APPROVED,
+	APPROVED,
 	CANDIDATE,
 	EXPIRED,
 	UNKNOWN,

@@ -1,7 +1,8 @@
 package ac.at.acdh.cmdi.ccr;
 
+import java.util.Objects;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class CCRConcept{
@@ -48,7 +49,7 @@ public class CCRConcept{
 
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder(15, 45).append(uri).hashCode();
+		return Objects.hash(this.uri);
 	}
 
 	public String toString() {
