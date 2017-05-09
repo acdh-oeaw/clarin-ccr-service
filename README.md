@@ -14,7 +14,7 @@ Clone or download and build the library with maven using command:
 mvn install
 ```
 
-Create depandency in your pom file or add the jar file to the classpath
+Create dependency in your pom file or add the jar file to the classpath
 
 ```
 	<groupId>ac.at.acdh.cmdi</groupId>
