@@ -14,7 +14,7 @@ Clone or download and build the library with maven using command:
 mvn install
 ```
 
-Create depandancy in your pom file or add the jar file to the classpath
+Create depandency in your pom file or add the jar file to the classpath
 
 ```
 	<groupId>ac.at.acdh.cmdi</groupId>
@@ -29,7 +29,7 @@ To create CCRservice object use following code:
 ```
 ICCRService ccr = CCRServiceFactory.getCCRService();
 ```
-Factory returns singlotn object that is initialized with all concepts from the CCR. Also, once per hour factory "refreshes" the object in order to provide long running services with up-to-date values. Data is parsed with [gson library](https://github.com/google/gson). 
+Factory returns singleton object that is initialized with all concepts from the CCR. Also, once per hour factory "refreshes" the object in order to provide long running services with up-to-date values. Data is parsed with [gson library](https://github.com/google/gson). 
 
 ICCRService interface has two methods:
  * CCRConcept getConcept(String uri)
