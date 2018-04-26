@@ -19,7 +19,7 @@ public class CCRTest {
 
 	@Before
 	public void init() throws Exception {
-		ccrService = CCRServiceFactory.getCCRService();
+		ccrService = CCRServiceFactory.getCCRService(false);
 	}
 
 	@Test

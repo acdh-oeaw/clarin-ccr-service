@@ -14,32 +14,40 @@ public class CCRServiceFactory {
 	
 	private CCRService crrService;
 	
-	private CCRServiceFactory(){//refresh concept cache
+	private CCRServiceFactory(boolean enableTimer){//refresh concept cache
 		try {
 			crrService = new CCRService();
-			
-			Timer timer = new Timer();
-			timer.schedule(new TimerTask() {
-				
-				@Override
-				public void run() {
-					synchronized (crrService) {
+
+			//enableTimer is only set when ccrservice is called from the webmodule and not the coremodule
+			//because coremodule doesnt terminate when there is a timer
+			if(enableTimer){
+
+				Timer timer = new Timer();
+				timer.schedule(new TimerTask() {
+
+					@Override
+					public void run() {
+						synchronized (crrService) {
 
 							crrService = new CCRService();
-						
+
+						}
+
 					}
-					
-				}
-			}, 60 * 60 * 1000 /* Once per day*/);
+				}, 60 * 60 * 1000 /* Once per day*/);
+
+			}
+
+
 		} catch (Exception e) {
 			_logger.error("", e);
 		}
 	}
 	
 	
-	public static synchronized ICCRService getCCRService(){
+	public static synchronized ICCRService getCCRService(boolean enableTimer){
 		if(CCRServiceFactory.fac == null){
-			CCRServiceFactory.fac = new CCRServiceFactory();
+			CCRServiceFactory.fac = new CCRServiceFactory(enableTimer);
 		}
 		return CCRServiceFactory.fac.crrService;
 	}
